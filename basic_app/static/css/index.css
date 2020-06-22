@@ -1,0 +1,31 @@
+h1 {
+    position: absolute;
+    top: 40%;
+    left: 43%;
+    font-size: 50px;
+    color: rgb(37, 36, 36);
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+    left: 42%;
+}
+
+.btn {
+    border: 1px solid rgb(51, 50, 50);
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(66, 64, 64);
+}
+
+.btn:hover {
+    background-color: rgb(59, 58, 58);
+    color: rgb(51, 48, 48);
+    color: rgb(255, 253, 253);
+}
+
+body {
+    background-color: rgb(188, 235, 238);
+}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="header">
+    <div class="display-4">Quiz Time</div>
+</div>
+
+<div class="qpage">
+    <form action="{% url 'answer' %}" method="POST">
+        {% csrf_token %} 
+
+        <div class="mainQ">
+            {% for question in questions %}
+
+            <div class="quetionTitle">{{ question.id }}.{{ question.question }} </div><br>
+
+            <div id="choices" class='select'>
+                <input class='select' type="radio" name="{{question.id}}" value="{{question.choice_one}}" required><span class="label">{{question.choice_one}}</span><br>
+                <input class='select' type="radio" name="{{question.id}}" value="{{question.choice_two}}" required><span class="label">{{question.choice_two}}</span><br>
+                <input class='select' type="radio" name="{{question.id}}" value="{{question.choice_three}}" required><span class="label">{{question.choice_three}}</span><br>
+                <input class='select' type="radio" name="{{question.id}}" value="{{question.choice_four}}" required><span class="label">{{question.choice_four}}</span><br>
+                <input class='select' type="radio" name="{{question.id}}" value="{{question.choice_five}}" required><span class="label">{{question.choice_five}}</span><br>
+            </div><br>
+            {% endfor %}
+
+        </div>
+        <div style="text-align:center ;margin:5px"> <input class="btn btn-success" type="submit" class="submit" id="submit" value="Submit" /></div>
+
+    </form>
+
+</div>
+
+{% endblock %}

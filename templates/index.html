@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %}
+
+        <div class="h1">
+	     <h1>Quiz Time</h1>
+	    </div>
+	    <div class="button">
+	       <a class="btn" href="{% url 'quiz' %}">Start Quiz</a>
+		   <a class="btn" href="{% url 'leader' %}">Leaderboard</a>
+	    </div>
+
+{% endblock %}

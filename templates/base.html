@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity=" sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh " crossorigin="anonymous ">
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    <link href="{% static 'css/quiz/quiz.css' %}" rel="stylesheet">
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+    
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="fix">
+        <ul>
+
+            {% if user.is_authenticated %}
+            <span style="font-size:25px; margin-right:8px">Hey, {{user.username}}</span>
+            {% endif %}
+
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'quiz' %}">Quiz</a></li>
+            <li><a href="{% url 'leader' %}">LeaderBoard</a></li>
+
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">LogOut</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            {% endif %}
+
+        </ul>
+    </div>
+
+</body>
+
+<div class="down">
+    {% block content %} {% endblock %}
+</div>
+
+</html>
